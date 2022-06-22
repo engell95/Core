@@ -1,0 +1,26 @@
+@model Users
+@{
+    ViewData["Title"] = "Admin Page";
+    Layout = "_Layout";
+}
+<h1>Details User <strong>@Model.nickname</strong></h1>
+
+<section>
+    <li>User login now <strong> @ViewBag.Login</strong></li>
+    <li>Server: <strong>@ViewData["Server"] </strong></li>
+</section>
+<div class="col-auto">
+            <button class="btn btn-primary" id="btnSwitch">Switch</button>
+        </div>
+
+<script>
+document.getElementById('btnSwitch').addEventListener('click',()=>{
+    if (document.body.classList.contains('dark')) {
+        document.body.classList.remove('dark')
+    }
+    else {
+        document.body.classList.add('dark')
+    }
+    document.getElementById('darkTheme').innerText = document.body.classList
+})
+</script>
