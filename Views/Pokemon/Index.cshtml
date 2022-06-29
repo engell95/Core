@@ -1,4 +1,13 @@
+@model Result
+
 <div class="text-center">
     <h1 class="display-4">Welcome section app @ViewData["Title"]</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<section id="section-categorie">
+    @foreach (var item in Model.results)
+    {
+        <partial name="_Card" model="item"/>       
+    }
+</section>
